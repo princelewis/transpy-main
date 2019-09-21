@@ -1,0 +1,194 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+#header
+{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+.navbar
+{
+    padding: 50px 0;
+}
+
+.navbar-brand
+{
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.navbar-dark .navbar-brand
+{
+    color: #dcdde1
+}
+
+.nav-item
+{
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-left: 10px;
+}
+
+.navbar-dark .nav-item .navbar-nav nav-link:hover
+{
+    background: #dcdde1;
+    color: #262626;
+}
+
+.main
+{
+    position: relative;
+     background: url("https://media.istockphoto.com/photos/texture-dark-concrete-floor-picture-id621925576?k=6&m=621925576&s=612x612&w=0&h=H4rph08J2vSJz_crupTLvHf5OKW0olvoRJzaAK37Yhg=");
+    /* https://i.ytimg.com/vi/oLod_kR1PHQ/maxresdefault.jpg"); */
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding: 220px 0 220px;
+}
+
+.main h2
+{
+    margin: 0;
+    padding: 0;
+    font-size: 3.1em;
+    color: #dcdde1;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.main p
+{
+    margin-top: 1em;
+    padding: 0;
+    font-size: 1.4em;
+    color: #dcdde1;
+}
+
+label
+{
+    color: #ffffff;
+}
+
+@media(max-width: 768px)
+{
+    .main
+    {
+        padding: 200px 0;
+    }
+
+    .main h2
+    {
+        font-size: 2em;
+    }
+}
+
+.book-form{
+    margin: auto;
+}
+
+.my-form{
+    border: 1px solid;
+    border-radius: 15px 50px;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #ffffff;
+}
+
+.form-label label{
+    color: black;
+}
+.book-dpt{
+    margin-bottom: 30px;
+}
+
+.book-btn{
+    margin-top: 20px;
+}
+
+.section-con{
+    display: flex;
+    justify-content: flex-start;
+}
+.seat-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.seat-head{
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
+.default-seat{
+    background: grey;
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.seat {
+    background: #4CAF50;
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.seat-select {
+    display: none;
+    border: 2px solid yellow;
+}
+
+.seat-select:checked+.seat {
+    background: #F44336;
+}
+
+.cc-digits{
+    margin-top: 50px;
+}
+
+.credit-card input {
+    color: white;
+    background: grey;
+    margin-right: 0.5em;
+    width: 100%;
+    font-size: 1em;
+    line-height: 1em;
+}
+
+.credit-card {
+    border: 1px solid red;
+
+}
+
+.pay-btn{
+    float: right;
+    margin-top: 5px;
+}
+
+.amountFee
+{
+    text-align:center;
+    display: none; 
+}
+
+.amountFee p{
+    color:#E53D00;
+    font-size: 25px;
+    border: 1px solid grey;
+    width: 70%;
+    margin: auto;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+/* .mg
+{
+    margin-top: 150px;
+
+} */

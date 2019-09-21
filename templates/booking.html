@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Booking
+{% endblock %}
+
+{% block main %}
+<form action="/booking" method="POST" name="myform" class="book-form">
+    <div class="container my-form">
+        <div class="form-group row form-label">
+            <div class="col-6 book-dpt">
+                <label for="dept-state">Depature State:</label>
+                <select class="form-control" id="dept-state">
+                    <option value="lagos" selected>Lagos</option>
+                </select>
+            </div>
+            <div class="col-6 book-dpt">
+                <label for="dest-state">Destination State:</label>
+                <select class="form-control" id="dest-state" name="terminal" required>
+                    <option   selected disabled>choose a destination</option>
+                    {% for arrival in arrivals %}
+                    <option value='{{ arrival.arrival }}'>{{ arrival.arrival }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-3">
+                <label for="date-input">Depature Date:</label>
+                <input type="date" class="form-control" id="date-input" name="date" value="2019-09-10" min="2019-09-10" max="2019-09-11" required>
+            </div>
+            <div class="col-3">
+                <label for="">Number:</label>
+                <select class="form-control" id="number">
+                    <option selected>1</option>
+                </select>
+            </div>
+            <div class="col-3 amountFee" id="amount">
+                <h5>Fee:</h5>
+                <p id='trial'></p>
+            </div>
+            <div class="col-3">
+                <a class="btn btn-primary btn-lg book-btn" data-toggle="modal" href=".bd-example-modal-lg">Book Now</a>
+            </div>
+            </div>
+      
+    <div class="modal fade bd-example-modal-lg" id="modalExample" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100 trans-label" id="myModalLabel"></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body section-con">
+                    <div class="seat-container col-4">
+                        <input id="seatNum" class="seat-select" type="radio" value="1" name="seat" checked disabled/>
+                        <label for="seatNum" class="default-seat">1</label>
+                        {% for seat in seats %}
+                            {% if seat in seater%}
+                                <input id="seat-{{seat}}" class="seat-select" type="radio" value="{{seat}}" name="seat" checked disabled>
+                                <label for="seat-{{seat}}" class="default-seat">{{seat}}</label>
+                            {% else %}
+                                <input id="seat-{{seat}}" class="seat-select" type="radio" value="{{seat}}" name="seat" required>
+                                <label for="seat-{{seat}}" class="seat">{{seat}}</label>
+                            {% endif %}
+                        {% endfor %}       
+                    </div>
+                    <div class="cc-digits col-6" id="digits">
+                        <div class="md-form md-bg form-lg">
+                            <strong><label for="form-bg-lg"></label>Enter Credit Card Here:</strong>
+                            <input id="form-bg-lg " class="form-control form-control-lg" type="text" placeholder="e.g 54xxxxxxxxxxxx" name="creditCard" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg pay-btn">Make Payment</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+</form>
+{% endblock %}
