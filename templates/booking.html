@@ -23,23 +23,28 @@
                     {% endfor %}
                 </select>
             </div>
-            <div class="col-3">
-                <label for="date-input">Depature Date:</label>
-                <input type="date" class="form-control" id="date-input" name="date" value="2019-09-10" min="2019-09-10" max="2019-09-11" required>
+
+            <div class="container row">
+                    <div class="col-sm-4 col-md-4">
+                    <label for="date-input">Depature Date:</label>
+                    <input type="date" class="form-control" id="date-input" name="date" value="2019-09-10" min="2019-09-10" max="2019-09-11" required>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <label for="">Number:</label>
+                    <select class="form-control" id="number">
+                        <option selected>1</option>
+                    </select>
+                </div>
             </div>
-            <div class="col-3">
-                <label for="">Number:</label>
-                <select class="form-control" id="number">
-                    <option selected>1</option>
-                </select>
-            </div>
+            
             <div class="col-3 amountFee" id="amount">
                 <h5>Fee:</h5>
                 <p id='trial'></p>
             </div>
-            <div class="col-3">
-                <a class="btn btn-primary btn-lg book-btn" data-toggle="modal" href=".bd-example-modal-lg">Book Now</a>
-            </div>
+ <div class="container text-center bkn">
+     <a class="btn btn-primary btn-large btn-block " id="bkn" data-toggle="modal" href=".bd-example-modal-lg">Book Now</a>
+
+ </div>
             </div>
       
     <div class="modal fade bd-example-modal-lg" id="modalExample" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
@@ -52,6 +57,10 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
+
+
+
                 <div class="modal-body section-con">
                     <div class="seat-container col-4">
                         <input id="seatNum" class="seat-select" type="radio" value="1" name="seat" checked disabled/>
@@ -66,12 +75,18 @@
                             {% endif %}
                         {% endfor %}       
                     </div>
+           
+           
+           
+           
+           
+           
                     <div class="cc-digits col-6" id="digits">
                         <div class="md-form md-bg form-lg">
                             <strong><label for="form-bg-lg"></label>Enter Credit Card Here:</strong>
                             <input id="form-bg-lg " class="form-control form-control-lg" type="text" placeholder="e.g 54xxxxxxxxxxxx" name="creditCard" required>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg pay-btn">Make Payment</button>
+                        <button type="submit" class="btn btn-success btn-block btn-lg pay-btn">Make Payment</button>
                     </div>
                 </div>
                 <div class="modal-footer">
